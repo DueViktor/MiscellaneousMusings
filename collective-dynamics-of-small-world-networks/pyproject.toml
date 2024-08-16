@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "collective-dynamics-of-small-world-networks"
+version = "0.1.0"
+description = ""
+authors = ["DueViktor <viktorduep@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+matplotlib = "^3.9.2"
+networkx = "^3.3"
+tqdm = "^4.66.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
