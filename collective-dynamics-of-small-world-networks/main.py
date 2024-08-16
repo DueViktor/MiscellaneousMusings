@@ -1,3 +1,5 @@
+"""Exercise given by Michele Coscia in the course Advanced Network Analysis at ITU, Autumn 2023."""
+
 from tqdm import tqdm
 import copy
 import random
@@ -111,11 +113,13 @@ def figure_2():
         Ls.append(sum(Ls_p) / len(Ls_p))
         Cs.append(sum(Cs_p) / len(Cs_p))
 
+    plt.figure(figsize=(8, 8))  
     plt.scatter(ps, Ls, label="L(p)/L(0)")
     plt.scatter(ps, Cs, label="C(p)/C(0)")
     plt.xscale("log")
     plt.legend()
     plt.tight_layout()
+
     plt.savefig("assets/figure_2.png")
     plt.clf()
 
