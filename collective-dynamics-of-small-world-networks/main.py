@@ -1,5 +1,4 @@
-""" Exercises given by Michele Coscia in the course "Advanced Network Analysis" Autumn 2023 """
-
+from tqdm import tqdm
 import copy
 import random
 from math import log as ln
@@ -8,7 +7,6 @@ from typing import Tuple
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
-from tqdm import tqdm
 
 def create_graph(n: int, k: int) -> nx.Graph:
     
@@ -58,33 +56,33 @@ def rewire_with_probability(G: nx.Graph, p: float) -> nx.Graph:
 
     return graph
 
-
 def figure_1():
     G: nx.Graph = create_graph(20, 4)
 
-    # generate a list of values with 0.1 increments
-    ps = np.arange(0, 1.1, 0.25)
-    fig, ax = plt.subplots(1, len(ps), figsize=(15, 5))
+    # Use these specific probabilities to match your example
+    ps = np.array([0, 0.25, 1.0])
+    titles = ["Regular\n$p = 0$", "Small-world", "Random\n$p = 1$"]
+    
+    fig, ax = plt.subplots(1, len(ps), figsize=(12, 4))
 
     for i, p in enumerate(ps):
         rewired: nx.Graph = rewire_with_probability(G, p)
         nx.draw(
             rewired,
             pos=nx.circular_layout(rewired),
-            with_labels=True,
-            connectionstyle="arc3,rad=0.1",
-            arrows=True,
+            with_labels=False,
+            node_color='black',
+            edge_color='black',
+            node_size=150,  # Increased node size for prominence
+            width=0.8,      # Decreased edge width for clarity
             ax=ax[i],
         )
-
-        ax[i].set_title(f"p = {p}")
+        ax[i].set_title(titles[i])
+        ax[i].set_axis_off()  # Turn off the axis
 
     plt.tight_layout()
-    plt.savefig("assets/figure_1.png")
+    plt.savefig("assets/figure_1_simplified_refined.png", dpi=300)
     plt.clf()
-
-    return
-
 
 def figure_2():
     def get_metrics(G: nx.Graph) -> Tuple[float, float]:
@@ -118,7 +116,6 @@ def figure_2():
     plt.tight_layout()
     plt.savefig("assets/figure_2.png")
     plt.clf()
-
 
 if __name__ == "__main__":
     figure_1()
