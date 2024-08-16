@@ -11,8 +11,8 @@ import numpy as np
 from tqdm import tqdm
 
 def create_graph(n: int, k: int) -> nx.Graph:
-    # validate n and k based on the paper
-    assert n > k > ln(n) > 1
+    
+    assert n > k > ln(n) > 1, "Ensure that n > k > ln(n) > 1."
 
     # We start with a ring of n vertices, ...
     G = nx.Graph()
@@ -24,7 +24,7 @@ def create_graph(n: int, k: int) -> nx.Graph:
             G.add_edge(i, j % n)
 
     # minor extension assert that the degree of all nodes are equal to k
-    assert all(G.degree[node] == k for node in G.nodes)
+    assert all(deg == k for _, deg in G.degree()), "All nodes must have degree k."
 
     return G
 
@@ -34,14 +34,14 @@ def rewire_with_probability(G: nx.Graph, p: float) -> nx.Graph:
     they are only rewiring one of the endpoints of the edge. I'll do the same"""
 
     # assert valid probability
-    assert p >= 0 and p <= 1, "p must be between 0 and 1, but was {}".format(p)
+    assert 0 <= p <= 1, f"p must be between 0 and 1, but was {p}."
 
     # create a copy of the graph
     graph: nx.Graph = copy.deepcopy(G)
 
-    def validate_new_edge(u: int, v: int, graph: nx.Graph) -> bool:
-        """Validate that the new edge is not a duplicate self-loop"""
-        return u != v and not graph.has_edge(u, v)
+    def is_valid_edge(u: int, v: int, G:nx.Graph) -> bool:
+        """Check if an edge between u and v is valid."""
+        return u != v and not G.has_edge(u, v)
 
     # For each edge (u, v) in the graph, rewire the edge with probability p
     for u, v in graph.edges:
@@ -50,7 +50,7 @@ def rewire_with_probability(G: nx.Graph, p: float) -> nx.Graph:
         if rewire:
             while True:
                 new_v: int = random.choice(list(graph.nodes))
-                if validate_new_edge(u, new_v, graph):
+                if is_valid_edge(u, new_v, graph):
                     break
 
             graph.remove_edge(u, v)
