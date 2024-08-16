@@ -57,31 +57,33 @@ def rewire_with_probability(G: nx.Graph, p: float) -> nx.Graph:
     return graph
 
 def figure_1():
-    G: nx.Graph = create_graph(20, 4)
+    G: nx.Graph = create_graph(10, 4)
 
-    # Use these specific probabilities to match your example
     ps = np.array([0, 0.25, 1.0])
-    titles = ["Regular\n$p = 0$", "Small-world", "Random\n$p = 1$"]
-    
+    titles = ["Regular\n$p = 0$", f"Small-world\n$p = {ps[1]}$", "Random\n$p = 1$"]
+
     fig, ax = plt.subplots(1, len(ps), figsize=(12, 4))
 
     for i, p in enumerate(ps):
         rewired: nx.Graph = rewire_with_probability(G, p)
+        
+        # Use connectionstyle only for the first plot, omit it otherwise
         nx.draw(
             rewired,
             pos=nx.circular_layout(rewired),
             with_labels=False,
             node_color='black',
             edge_color='black',
-            node_size=150,  # Increased node size for prominence
-            width=0.8,      # Decreased edge width for clarity
+            node_size=150,
+            width=0.8,
             ax=ax[i],
         )
+        
         ax[i].set_title(titles[i])
         ax[i].set_axis_off()  # Turn off the axis
 
     plt.tight_layout()
-    plt.savefig("assets/figure_1_simplified_refined.png", dpi=300)
+    plt.savefig("assets/figure_1.png", dpi=300)
     plt.clf()
 
 def figure_2():
