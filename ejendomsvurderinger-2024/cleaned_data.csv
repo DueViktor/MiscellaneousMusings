@@ -18,35 +18,9 @@ property_id,adresse,by_og_zip,ejendomsværdi_2024,grundværdi_2024,ejendomsværd
 17,"Jens Otto Krags Gade 16, 2 th",2300 København S,5079000,3048000,5155000,3069000
 18,"Jens Otto Krags Gade 16, 3 tv",2300 København S,5106000,3056000,5183000,3077000
 19,"Jens Otto Krags Gade 16, 3 th",2300 København S,5160000,3089000,5237000,3110000
-3,"Jens Otto Krags Gade 12, 3 tv",2300 København S,5024000,2981000,0,0
-8,"Jens Otto Krags Gade 12, 5 th",2300 København S,5012000,2963000,0,0
-3,"Jens Otto Krags Gade 12, 3 tv",2300 København S,5024000,2981000,0,0
-8,"Jens Otto Krags Gade 12, 5 th",2300 København S,5012000,2963000,0,0
-4,"Jens Otto Krags Gade 12, 3 th",2300 København S,4912000,2913000,0,0
 9,"Jens Otto Krags Gade 12, 6 tv",2300 København S,4892000,2876000,0,0
-4,"Jens Otto Krags Gade 12, 3 th",2300 København S,4912000,2913000,0,0
-9,"Jens Otto Krags Gade 12, 6 tv",2300 København S,4892000,2876000,0,0
-2,"Jens Otto Krags Gade 12, 2 th",2300 København S,4836000,2873000,0,0
 7,"Jens Otto Krags Gade 12, 5 tv",2300 København S,5125000,3034000,0,0
-2,"Jens Otto Krags Gade 12, 2 th",2300 København S,4836000,2873000,0,0
-7,"Jens Otto Krags Gade 12, 5 tv",2300 København S,5125000,3034000,0,0
-1,Eskildsgade 56,1657 København V,0,39720000,0,0
 6,"Jens Otto Krags Gade 12, 4 th",2300 København S,5016000,2965000,0,0
-1,Eskildsgade 56,1657 København V,0,39720000,0,0
-6,"Jens Otto Krags Gade 12, 4 th",2300 København S,5016000,2965000,0,0
-5,"Jens Otto Krags Gade 12, 4 tv",2300 København S,5129000,3036000,0,0
-10,"Jens Otto Krags Gade 12, 6 th",2300 København S,10134000,5428000,0,0
-5,"Jens Otto Krags Gade 12, 4 tv",2300 København S,5129000,3036000,0,0
-10,"Jens Otto Krags Gade 12, 6 th",2300 København S,10134000,5428000,0,0
-3,"Jens Otto Krags Gade 12, 3 tv",2300 København S,5024000,2981000,0,0
-8,"Jens Otto Krags Gade 12, 5 th",2300 København S,5012000,2963000,0,0
-4,"Jens Otto Krags Gade 12, 3 th",2300 København S,4912000,2913000,0,0
-9,"Jens Otto Krags Gade 12, 6 tv",2300 København S,4892000,2876000,0,0
-2,"Jens Otto Krags Gade 12, 2 th",2300 København S,4836000,2873000,0,0
-7,"Jens Otto Krags Gade 12, 5 tv",2300 København S,5125000,3034000,0,0
-1,Eskildsgade 56,1657 København V,0,39720000,0,0
-6,"Jens Otto Krags Gade 12, 4 th",2300 København S,5016000,2965000,0,0
-5,"Jens Otto Krags Gade 12, 4 tv",2300 København S,5129000,3036000,0,0
 10,"Jens Otto Krags Gade 12, 6 th",2300 København S,10134000,5428000,0,0
 23,"Jens Otto Krags Gade 16, 5 th",2300 København S,5263000,3141000,5342000,3163000
 28,"Jens Otto Krags Gade 18, 1 tv",2300 København S,5034000,2997000,0,0
@@ -348,35 +322,23 @@ property_id,adresse,by_og_zip,ejendomsværdi_2024,grundværdi_2024,ejendomsværd
 46,"Jens Otto Krags Gade 20, 2 th",2300 København S,4948000,2953000,5022000,2974000
 51,,,0,0,0,0
 20,"Jens Otto Krags Gade 16, 4 tv",2300 København S,5214000,3110000,5292000,3132000
-21,"Jens Otto Krags Gade 16, 4 th",2300 København S,5268000,3143000,5347000,3165000
 22,"Jens Otto Krags Gade 16, 5 tv",2300 København S,5210000,3108000,0,0
 23,"Jens Otto Krags Gade 16, 5 th",2300 København S,5263000,3141000,0,0
 24,"Jens Otto Krags Gade 16, 6 tv",2300 København S,9151000,4935000,0,0
 25,"Jens Otto Krags Gade 16, 6 th",2300 København S,9014000,4868000,0,0
-26,"Jens Otto Krags Gade 18, st th",2300 København S,4205000,2492000,0,0
-27,"Jens Otto Krags Gade 18, st tv",2300 København S,4000000,2362000,0,0
-28,"Jens Otto Krags Gade 18, 1 tv",2300 København S,5034000,2997000,0,0
-29,"Jens Otto Krags Gade 18, 1 th",2300 København S,5250000,3129000,0,0
 30,"Jens Otto Krags Gade 18, 2 tv",2300 København S,5086000,3024000,0,0
 31,"Jens Otto Krags Gade 18, 2 th",2300 København S,5303000,3156000,0,0
 32,"Jens Otto Krags Gade 18, 3 tv",2300 København S,5165000,3064000,0,0
 33,"Jens Otto Krags Gade 18, 3 th",2300 København S,5387000,3199000,0,0
 34,"Jens Otto Krags Gade 18, 4 tv",2300 København S,5275000,3119000,0,0
 35,"Jens Otto Krags Gade 18, 4 th",2300 København S,5500000,3256000,0,0
-36,"Jens Otto Krags Gade 18, 5 tv",2300 København S,5270000,3117000,0,0
-37,"Jens Otto Krags Gade 18, 5 th",2300 København S,5496000,3254000,0,0
-38,"Jens Otto Krags Gade 18, 6 tv",2300 København S,8433000,4573000,0,0
-39,"Jens Otto Krags Gade 18, 6 th",2300 København S,5969000,3526000,0,0
 40,"Jens Otto Krags Gade 18, 7",2300 København S,4907000,2891000,0,0
-41,"Jens Otto Krags Gade 20, st th",2300 København S,3842000,2276000,0,0
-42,"Jens Otto Krags Gade 20, st tv",2300 København S,4041000,2402000,0,0
 43,"Jens Otto Krags Gade 20, 1 tv",2300 København S,5055000,3025000,0,0
 44,"Jens Otto Krags Gade 20, 1 th",2300 København S,4899000,2929000,0,0
 45,"Jens Otto Krags Gade 20, 2 tv",2300 København S,5107000,3051000,0,0
 46,"Jens Otto Krags Gade 20, 2 th",2300 København S,4948000,2953000,0,0
 47,"Jens Otto Krags Gade 20, 3 tv",2300 København S,5187000,3092000,0,0
 48,"Jens Otto Krags Gade 20, 3 th",2300 København S,5027000,2993000,0,0
-49,"Jens Otto Krags Gade 20, 4 tv",2300 København S,5297000,3147000,0,0
 50,"Jens Otto Krags Gade 20, 4 th",2300 København S,5132000,3047000,0,0
 51,"Jens Otto Krags Gade 20, 5 tv",2300 København S,5293000,3145000,0,0
 52,"Jens Otto Krags Gade 20, 5 th",2300 København S,5128000,3045000,0,0
@@ -444,11 +406,6 @@ property_id,adresse,by_og_zip,ejendomsværdi_2024,grundværdi_2024,ejendomsværd
 114,"Marskensgade 9, 3 1",2100 København Ø,2391000,1410000,0,0
 20,"Jens Otto Krags Gade 16, 4 tv",2300 København S,5214000,3110000,0,0
 21,"Jens Otto Krags Gade 16, 4 th",2300 København S,5268000,0,0,0
-20,"Jens Otto Krags Gade 16, 4 tv",2300 København S,5214000,3110000,5292000,3132000
-25,"Jens Otto Krags Gade 16, 6 th",2300 København S,9014000,4868000,0,0
-30,"Jens Otto Krags Gade 18, 2 tv",2300 København S,5086000,3024000,0,0
-35,"Jens Otto Krags Gade 18, 4 th",2300 København S,5500000,3256000,0,0
-40,"Jens Otto Krags Gade 18, 7",2300 København S,4907000,2891000,0,0
 45,"Jens Otto Krags Gade 20, 2 tv",2300 København S,5107000,3051000,5184000,3072000
 804,"Tom Kristensens Vej 22, 3 tv",2300 København S,4605000,2786000,4674000,2805000
 805,"Tom Kristensens Vej 22, 3 th",2300 København S,5935000,3475000,6024000,3499000
