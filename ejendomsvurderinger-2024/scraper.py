@@ -1,3 +1,8 @@
+"""
+Jeg er ikke i nærheden af at være en scraping master så bær lige over med mig
+
+"""
+
 import csv
 import time
 from concurrent.futures import ThreadPoolExecutor
