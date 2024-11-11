@@ -32,7 +32,9 @@ df["grundværdi_2022"] = df["grundværdi_2022"].apply(convert_to_number)
 print(df)
 
 print(len(df))
-df.drop_duplicates(inplace=True)
+df.drop_duplicates(subset="property_id", inplace=True)
 print(len(df))
+
+df.sort_values(by="property_id", inplace=True)
 
 df.to_csv("cleaned_data.csv", index=False)
