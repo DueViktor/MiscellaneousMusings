@@ -20,26 +20,27 @@ def xmas(matrix, ridx, cidx) -> int:
 
     # left
     if (
-        cidx - L >= 0
+        cidx - L + 1 >= 0
         and "".join(matrix[ridx, cidx - L + 1 : cidx + 1][::-1]) == TARGET_WORD
     ):
         count += 1
 
-    # Up
+    # up
     if (
-        ridx - L >= 0
+        ridx - L + 1 >= 0
         and "".join(matrix[ridx - L + 1 : ridx + 1, cidx][::-1]) == TARGET_WORD
     ):
         count += 1
 
-    # Down
+    # down
+    if ridx + L <= rows and "".join(matrix[ridx : ridx + L, cidx]) == TARGET_WORD:
+        count += 1
 
     return count
 
 
 total = 0
 for ridx in range(rows):
-    print(ridx)
     for cidx in range(cols):
         total += xmas(matrix, ridx, cidx)
 
