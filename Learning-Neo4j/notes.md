@@ -118,3 +118,6 @@ Moving data from one database to neo4j.
 
 ![Importing data with neo](assets/import-data-charts.svg)
 
+## Impact of indexes on query performance
+
+used automatically by the Cypher® planner in MATCH clauses
