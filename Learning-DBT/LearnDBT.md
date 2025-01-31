@@ -273,6 +273,135 @@ sources:
 
 ## [Testing](https://learn.getdbt.com/learn/course/dbt-fundamentals/tests-30min/first-lesson?page=8)
 
+Run with `dbt test`.
+
+Singular: Specific for a model. If a model is special in some way. THe dbt checks if rows are returned that violates a statement. So, if looking for only positive values, search for negative values.
+
+Generic: Highly scalable.
+- unique (should probably be on primary id)
+- not_null (should probably be on primary id)
+- relationships -> Every value in col a exist in col b.
+- accepted_values -> Every value in a col exist in a predefined list
+
+Example of test yaml
+```yaml
+version: 2
+
+models:
+  - name: stg_jaffle_shop__customers
+    columns: 
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_jaffle_shop__orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values:
+                - completed
+                - shipped
+                - returned
+                - return_pending
+                - placed
+```
+
+Instead of testing models, we can also test sources. I.e. measuring if the raw source data have the expected standard.
+
+**Review**
+
+Testing
+- Testing is used in software engineering to make sure that the code does what we expect it to.
+- In Analytics Engineering, testing allows us to make sure that the SQL transformations we write produce a model that meets our assertions.
+- In dbt, tests are written as select statements. These select statements are run against your materialized models to ensure they meet your assertions.
+Tests in dbt
+- In dbt, there are two types of tests - generic tests and singular tests:
+    - **Generic tests** are a way to validate your data models and ensure data quality. These tests are predefined and can be applied to any column of your data models to check for common data issues. They are written in YAML files.
+    - **Singular tests** are data tests defined by writing specific SQL queries that return records which fail the test conditions. These tests are referred to as "singular" because they are one-off assertions that are uniquely designed for a single purpose or specific scenario within the data models.
+- dbt ships with four built in tests: unique, not null, accepted values, relationships.
+    - **Unique** tests to see if every value in a column is unique
+    - **Not_null** tests to see if every value in a column is not null
+    - **Accepted_values** tests to make sure every value in a column is equal to a value in a provided list
+    - **Relationships** tests to ensure that every value in a column exists in a column in another model (see: referential integrity)
+- Tests can be run against your current project using a range of commands:
+    - dbt test runs all tests in the dbt project
+    - dbt test --select test_type:generic
+    - dbt test --select test_type:singular
+    - dbt test --select one_specific_model
+
+## Documentation
+
+`dbt docs generate`
+
+Example:
+
+```
+version: 2
+
+models:
+  - name: stg_customers
+    description: Staged customer data from our jaffle shop app.
+    columns: 
+      - name: customer_id
+        description: The primary key for customers.
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: Staged order data from our jaffle shop app.
+    columns: 
+      - name: order_id
+        description: Primary key for orders.
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: '{{ doc("order_status") }}'
+        tests:
+          - accepted_values:
+              values:
+                - completed
+                - shipped
+                - returned
+                - placed
+                - return_pending
+      - name: customer_id
+        description: Foreign key to stg_customers.customer_id.
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+```
+
+**Review**
+
+**Documentation**
+- Documentation is essential for an analytics team to work effectively and efficiently. Strong documentation empowers users to self-service questions about data and enables new team members to on-board quickly.
+- Documentation often lags behind the code it is meant to describe. This can happen because documentation is a separate process from the coding itself that lives in another tool.
+- Therefore, documentation should be as automated as possible and happen as close as possible to the coding.
+- In dbt, models are built in SQL files. These models are documented in YML files that live in the same folder as the models.
+
+**Writing documentation and doc blocks**
+- Documentation of models occurs in the YML files (where generic tests also live) inside the models directory. It is helpful to store the YML file in the same subfolder as the models you are documenting.
+- For models, descriptions can happen at the model, source, or column level.
+- If a longer form, more styled version of text would provide a strong description, doc blocks can be used to render markdown in the generated documentation.
+
+**Generating and viewing documentation**
+- In the command line section, an updated version of documentation can be generated through the command dbt docs generate. This will refresh the `view docs` link in the top left corner of the Cloud IDE.
+- The generated documentation includes the following:
+    - Lineage Graph
+    - Model, source, and column descriptions
+    - Generic tests added to a column
+    - The underlying SQL code for each model
+    - and more...
+
 ## Misc
 
 - dbt use jinja templating language.
@@ -282,3 +411,5 @@ sources:
 - When executing "dbt run" the models are created in the target database.
 - Specify a file to build with "dbt run --select <model_name>"
 - Modularity: dbt allows you to build models that depend on other models. This is called ref.
+- `dbt build` executes both dbt run and dbt test at the same time, so nothing is build that have underlying failing tests.
+
